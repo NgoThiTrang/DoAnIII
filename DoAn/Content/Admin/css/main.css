@@ -1,0 +1,81 @@
+﻿table.dataTable {
+    border-collapse: collapse !important;
+}
+
+table.dataTable thead th {
+    border-bottom: none !important;
+}
+
+.dt-buttons {
+    float: right !important;
+}
+
+.btn-group a {
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate ul.pagination {
+    margin: 2px 0 !important;
+    white-space: nowrap !important;
+    margin-left: 0px !important;
+}
+
+/*.dataTables_wrapper .dataTables_paginate .paginate_button  {
+    pointer-events: none !important;
+}*/
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: none !important;
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0px !important;
+}
+
+.paginate_button:hover {
+    border: 1px solid white;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border: 1px solid #fff !important;
+}
+
+.login {
+    background-image: url('../img/layout.jpg');
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100% !important;
+}
+
+.project-list table tr td {
+    padding: 5px 5px !important;
+}
+
+.float-e-margins .btn {
+    margin-bottom: 15px !important;
+    padding: 7px 10px !important;
+}
+
+.ng-invalid-required {
+    border-color: red !important;
+}
+::-moz-selection {
+    background: yellow; /* yellow */
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: yellow; /* yellow */
+    color: #fff;
+    text-shadow: none;
+}

@@ -1,0 +1,136 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Danh sách nhóm người dùng</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a ui-sref="dashboards">Home</a>
+            </li>
+            <li>
+                <a>Quản trị hệ thống</a>
+            </li>
+            <li class="active">
+                <strong>Nhóm người dùng</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight" ng-init="initData()">
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-primary" ng-click="enableAddGroup()"><i class="fa fa-plus" aria-hidden="true"></i>  Thêm mới nhóm người dùng</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>DANH SÁCH NHÓM NGƯỜI DÙNG </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="table-responsive">
+                        <table datatable="ng" dt-column-defs="dtColumnDefs" dt-options="dtOptions" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr class="">
+                                    <th>Id</th>
+                                    <th>Tên</th>
+                                    <th>Mô tả</th>
+                                    <th width="10%">#</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in groups">
+                                    <td>{{item.Id}}</td>
+                                    <td>{{item.Name}}</td>
+                                    <td>{{item.Description}}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" ng-click="enableEditGroup(item)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> &nbsp;
+
+                                        <button class="btn  btn-sm btn-danger" ng-click="deleteGroup(item.Id)"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="">
+                                    <th>Id</th>
+                                    <th>Tên</th>
+                                    <th>Mô tả</th>
+                                    <th width="10%">#</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form-group" class="modal fade in" aria-hidden="true" style="padding-right: 17px;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" ng-show="isEditGroup">Cập nhật nhóm quyền {{user.Name}}</h3>
+                    <h3 class="modal-title" ng-show="!isEditGroup">Tạo mới nhóm quyền</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="form-horizontal" name="frmGroup" role="form" ng-submit="updateGroup()">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Tên nhóm người dùng (*)</label>
+
+                                    <div class="col-sm-8"><input type="text" class="form-control" ng-model="group.Name" required></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Mô tả (*)</label>
+                                    <div class="col-sm-8"><input type="text" class="form-control" ng-model="group.Description" required></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8 checkbox checkbox-circle " style="position: relative;" ng-repeat="role in roles">
+                                        <input type="checkbox" checklist-model="group.Roles" checklist-value="role" style="position:relative; margin-left: 0;">
+                                        <label>
+                                            {{role.Description}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div>
+                                    <button class="btn btn-sm btn-danger pull-right m-t-n-xs" style="padding: 5px 20px; margin-left: 10px;" type="button" ng-click="closeEditForm()"><strong>Hủy</strong></button>
+                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" style="padding: 5px 20px;" ng-disabled="frmGroup.$invalid" type="submit"><strong>Lưu</strong></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

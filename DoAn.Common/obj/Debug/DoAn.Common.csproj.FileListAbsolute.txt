@@ -1,0 +1,9 @@
+D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\DoAn.Common.dll
+D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\DoAn.Common.pdb
+D:\Documents\document_20191\DoAn\DoAn.Common\obj\Debug\DoAn.Common.csproj.CoreCompileInputs.cache
+D:\Documents\document_20191\DoAn\DoAn.Common\obj\Debug\DoAn.Common.dll
+D:\Documents\document_20191\DoAn\DoAn.Common\obj\Debug\DoAn.Common.pdb
+D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\Autofac.dll
+D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\Autofac.pdb
+D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\Autofac.xml
+D:\Documents\document_20191\DoAn\DoAn.Common\obj\Debug\DoAn.Common.csproj.CopyComplete

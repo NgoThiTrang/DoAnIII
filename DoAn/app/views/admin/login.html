@@ -1,0 +1,38 @@
+﻿<style>
+    .ng-scope {
+        height: 100%;
+    }
+</style>
+<div class="loginColumns animated fadeInDown login">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="ibox-content">
+                <form class="m-t" role="form" ng-submit="loginSubmit()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="loginData.UserName" placeholder="Tài khoản" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" ng-model="loginData.Password" placeholder="Mật khẩu" required="">
+                    </div>
+                    <!--<div class="form-group">
+                        <div class="checkbox checkbox-circle ">
+                            <input type="checkbox" ng-model="user.Remberme" style="position:relative; margin-left: -15px;">
+                            <label>
+                               Duy trì đăng nhập
+                            </label>
+                        </div>
+                    </div>-->
+                    <button type="submit" class="btn btn-primary block full-width m-b">Đăng nhập</button>
+
+                    <a href="#">
+                        <small>Quên mật khẩu?</small>
+                    </a>
+                    
+                </form>
+                <p class="m-t">
+                    <small>BKRES - LORA &copy; 2017-2018</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

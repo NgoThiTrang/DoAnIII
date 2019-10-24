@@ -1,0 +1,290 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+
+    <link href="~/Assets/client/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+
+    <link href="~/Assets/client/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="color: royalblue">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fal fa-router"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">
+                    <i class="fas fa-user-circle"></i>
+                    SANSLAB
+                    .
+                </div>
+            </a>
+
+            <!-- Divider -->
+            @*<hr class="sidebar-divider my-0">*@
+
+            <!-- Nav Item - Dashboard -->
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="index.html">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span> Chọn chức năng tương tác tại đây</span></a>
+            </li> -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <!-- <div class="sidebar-heading">
+              Interface
+            </div> -->
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li style="margin-bottom:5%;margin-left: 5%; margin-top:15%">
+                <a style="color: azure">
+                    <i class="fas fa-map-marker-alt" style="color: antiquewhite"></i>
+                    <span>Địa Điểm</span>
+
+                </a>
+                <br>
+            </li>
+            <div style="color:cornsilk;margin-left:15%">
+
+
+                <i class="fas fa-map-marker-alt" style="color: antiquewhite"></i>    Đầm Cù Mông
+                <div style="color:lavenderblush; margin-left: 10%;margin-bottom: 20%; margin-top: 5%">
+                    <div class="custom-control custom-radio ">
+                        <input type="radio" style="color:goldenrod;" class="custom-control-input" id="map" name="giam-sat" value="vi-tri">
+                        <label class="custom-control-label" for="map">Giám sát trên MAP</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="thong-ke" name="giam-sat" value="vi-tri">
+                        <label class="custom-control-label" for="thong-ke">Thống kê</label>
+                    </div>
+
+                </div>
+
+
+                <i class="fas fa-map-marker-alt" style="color: antiquewhite"></i>   Vịnh Xuân Đài
+                <div style="color:lavenderblush; margin-left: 10%; height: 25px;margin-bottom: 0%; margin-top: 4%">
+                    <div class="custom-control custom-radio ">
+                        <input type="radio" style="color:goldenrod;" class="custom-control-input" id="map1" name="giam-sat" value="vi-tri">
+                        <label class="custom-control-label" for="map1">Giám sát trên MAP</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="thong-ke1" name="giam-sat" value="vi-tri">
+                        <label class="custom-control-label" for="thong-ke1">Thống kê</label>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- Heading -->
+            <!-- Nav Item - Pages Collapse Menu -->
+
+            <li style="margin-bottom:3%;margin-left: 5%;margin-top: 20%">
+                <a style="color: azure">
+
+                    <span>
+                        <i class="fas fa-eye"></i>
+                        Tham số quan trắc
+                    </span>
+
+                </a>
+                <br>
+            </li>
+            <li style="color:lavenderblush; margin-left: 20%;font-weight: 400;">
+                <div class="custom-control custom-radio ">
+                    <input type="radio" style="color:goldenrod;" class="custom-control-input" id="NH4" name="param" value="customEx">
+                    <label class="custom-control-label" for="NH4">NH4</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="NO2" name="param" value="customEx">
+                    <label class="custom-control-label" for="NO2">NO2</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="OXY" name="param" value="customEx">
+                    <label class="custom-control-label" for="OXY">OXY hoà tan</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="H2S" name="param" value="customEx">
+                    <label class="custom-control-label" for="H2S">H2S</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="salt" name="param" value="customEx">
+                    <label class="custom-control-label" for="salt">Độ Mặn</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="PH" name="param" value="customEx">
+                    <label class="custom-control-label" for="PH">PH</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="tem" name="param" value="customEx">
+                    <label class="custom-control-label" for="tem">Nhiệt độ</label>
+                </div>
+
+
+            </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item" style="color:white">
+                <a class="nav-link" href="#">
+                    <i style="font-size:18px; color:white" class="fa">&#xf1da;</i>
+
+                    <span>Lịch sử quan trắc</span>
+                </a>
+            </li>
+            <!-- Sidebar Toggler (Sidebar) -->
+
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content" class="position-relative">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <marquee direction="left" scrollamount=”80″ style="color:firebrick">HỆ THỐNG QUAN TRẮC NGUỒN NƯỚC TỰ ĐỘNG TẠI ĐẦM NUÔI TÔM</marquee>
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-5 d-none d-lg-inline text-gray-600 small" style="color:black"></span>
+                                <i class="far fa-clock" id="dongho" slot="padding-left:1.8em"></i>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div style="margin-left:30%; font-size:large"><span>Thiết bị {X} thuộc huyện {Y} đang được giám sát tại thời điểm {}</span></div>
+
+                <div style="margin-top:10px; margin-left:45%;font-weight: 100">
+                    <button type="button" class="btn btn-success">Vỉew All By Chart</button>
+                </div>
+                <div class="container-fluid d-flex">
+
+
+                </div>
+                <!-- /.container-fluid -->
+                <div class="position-absolute" style="bottom: 0; width: 100%">
+                    <div class="position-absolute" style="bottom: 5px; width: 100%; background-color:lightgrey;height: 150px;">
+                        <span style="margin-left: 40%">Thông tin cảnh báo vào khuyến cáo</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+
+    <script src="~/Assets/client/vendor/jquery/jquery.min.js"></script>
+
+    <script src="~/Assets/client/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+    <!-- Custom scripts for all pages-->
+
+    <script src="~/Assets/client/js/sb-admin-2.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var date = new Date()
+        var ngay = date.getDate();
+        var thang = date.getUTCMonth()+1;
+        var nam = date.getFullYear();
+        var gio = date.getHours();
+        var phut = date.getMinutes();
+        var giay = date.getSeconds();
+        //Lấy giờ hệ thống hiện tại
+        document.getElementById('dongho').innerHTML = '   ' + ngay + '/' + thang + '/' + nam + '  ' + gio + ':' + phut + ':' + giay;
+    </script>
+
+
+</body>
+
+</html>

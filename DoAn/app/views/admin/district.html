@@ -1,0 +1,164 @@
+﻿
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Danh sách quận/huyện</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a ui-sref="dashboards">Home</a>
+            </li>
+            <li>
+                <a>Quản lý chung</a>
+            </li>
+            <li class="active">
+                <strong>Quận/Huyện</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight" ng-init="initData()">
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-primary" ng-click="enableAddDistrict()"><i class="fa fa-plus" aria-hidden="true"></i>  Thêm mới quận/huyện</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>DANH SÁCH QUẬN HUYỆN </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="table-responsive">
+                        <table datatable="ng" dt-column-defs="dtColumnDefs" dt-options="dtOptions" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr class="">
+                                    <th width="10%">#</th>
+                                    <th>Tên</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Tỉnh/Thành</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Trạng thái</th>
+                                    <th width="10%">#</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in districts">
+                                    <td>{{item.Id}}</td>
+                                    <td>{{item.Name}}</td>
+                                    <td>{{item.PhoneNumber}}</td>
+                                    <td>{{item.ProvinceName}}</td>
+                                    <td>{{item.CreatedDate | convertDatetimePicker }}</td>
+                                    <td>
+                                        <span ng-class="{'badge badge-danger':item.isActive==false,'badge badge-primary':item.isActive==true}">
+                                            {{item.isActive | statusFilter}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="input-group-btn dropleft">
+                                            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Tùy chọn<span class="caret"></span></button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li ng-click="enableEditDistrict(item)"><a href="">Sửa quận/huyện</a></li>
+                                            </ul>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="">
+                                    <th width="10%">#</th>
+                                    <th>Tên</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Tỉnh/Thành</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Trạng thái</th>
+                                    <th width="10%">#</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form-district" class="modal fade in" aria-hidden="true" style="padding-right: 17px;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" ng-show="isEditDistrict">Cập nhật quận/huyện {{district.Name}}</h3>
+                    <h3 class="modal-title" ng-show="!isEditDistrict">Tạo mới quận/huyện</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="form-horizontal" name="frmDistrict" role="form" ng-submit="updateDistrict()">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Tên (*)</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" ng-model="district.Name" required></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">SĐT (*)</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" ng-model="district.PhoneNumber" required></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Tỉnh/Thành</label>
+                                    <div class="col-sm-10">
+                                        <select chosen class="chosen-select" tabindex="4" ng-model="district.ProvinceId" ng-options="item.Id as item.Name for item in provinces" required>
+                                            <option disabled></option>
+
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-8 checkbox checkbox-circle">
+                                        <input type="checkbox" style="position: relative; margin-left: 0px;" name="status" ng-model="district.isActive" ng-checked="district.isActive">
+                                        <label>
+                                            Kích hoạt
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-danger pull-right m-t-n-xs" style="padding: 5px 20px; margin-left: 10px;" type="button" ng-click="closeEditForm()"><strong>Hủy</strong></button>
+                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" style="padding: 5px 20px;" ng-disabled="frmDistrict.$invalid" type="submit"><strong>Lưu</strong></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

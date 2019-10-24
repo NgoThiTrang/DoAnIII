@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>ĐĂNG NHẬP TRANG WEB GIÁM SÁT</title>
+    <link href="~/Content/Client/css/css/style.css" rel="stylesheet" />
+
+    <script src="~/Content/Client/js_login/js/prefixfree.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="body">  </div>
+    <div class="header">
+        <marquee width="400%" direction="right" height="400px" font-size="200px" LOOP="10|-1|infinite" scrollamount="13"><h1>Vui lòng đăng nhập để tương tác với trang web giám sát nguồn nước của chúng tôi</h1></marquee>
+    </div>
+
+    <div class="grad"></div>
+
+    <br>
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form clearfix", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="login">
+            @Html.ValidationSummary(true)
+            <input type="text" placeholder="username" name="username"><br>
+            <input type="password" placeholder="password" name="password"><br>
+            <input type="submit" value="Login">
+        </div>
+    }
+    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+
+</body>
+
+</html>

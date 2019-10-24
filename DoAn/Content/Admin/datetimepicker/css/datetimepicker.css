@@ -1,0 +1,9 @@
+﻿.datetime-picker-dropdown {
+}
+
+    .datetime-picker-dropdown > li.date-picker-menu div > table .btn-default {
+        border: 0;
+    }
+
+    .datetime-picker-dropdown > li.time-picker-menu div > table {
+    }
