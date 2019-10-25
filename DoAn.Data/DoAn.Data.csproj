@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BkresContext.cs" />
+    <Compile Include="Helpers\SqlHelper.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
@@ -86,17 +87,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201910151734127_init1.cs" />
-    <Compile Include="Migrations\201910151734127_init1.designer.cs">
-      <DependentUpon>201910151734127_init1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910151738249_init11.cs" />
-    <Compile Include="Migrations\201910151738249_init11.designer.cs">
-      <DependentUpon>201910151738249_init11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910160515347_init3.cs" />
-    <Compile Include="Migrations\201910160515347_init3.designer.cs">
-      <DependentUpon>201910160515347_init3.cs</DependentUpon>
+    <Compile Include="Migrations\201910241400065_initDb.cs" />
+    <Compile Include="Migrations\201910241400065_initDb.designer.cs">
+      <DependentUpon>201910241400065_initDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ActivityLog.cs" />
@@ -128,7 +121,9 @@
     <Compile Include="Repository\ProvinceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -141,14 +136,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910151734127_init1.resx">
-      <DependentUpon>201910151734127_init1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910151738249_init11.resx">
-      <DependentUpon>201910151738249_init11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910160515347_init3.resx">
-      <DependentUpon>201910160515347_init3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910241400065_initDb.resx">
+      <DependentUpon>201910241400065_initDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,8 +17,7 @@
 
         protected override void Seed(DoAn.Data.BkresContext context)
         {
-            CreateUser(context)
-        ;
+            CreateUser(context);
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
@@ -31,17 +30,24 @@
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new BkresContext()));
             if (!manager.Users.Any())
             {
-                var user = new ApplicationUser()
+                var user1 = new ApplicationUser()
                 {
                     UserName = "trangngo",
                     Email = "ngothitrang.set@gmail.com",
                     EmailConfirmed = true,
-
                     FullName = "Ngô Thị Trang"
-
                 };
 
-                manager.Create(user, "123456");
+                var user2 = new ApplicationUser()
+                {
+                    UserName = "ntheanh",
+                    Email = "ntheanhbk@gmail.com",
+                    EmailConfirmed = true,
+                    FullName = "Nguyễn Thế Anh"
+                };
+
+                manager.Create(user1, "123456");
+                manager.Create(user2, "123456");
 
                 if (!roleManager.Roles.Any())
                 {
@@ -49,9 +55,10 @@
                     roleManager.Create(new IdentityRole { Name = "User" });
                 }
 
-                var adminUser = manager.FindByEmail("tedu.international@gmail.com");
+                var adminUser = manager.FindByEmail("ngothitrang.set@gmail.com");
 
                 manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+                manager.AddToRoles(manager.FindByEmail("ntheanhbk@gmail.com").Id, new string[] { "Admin", "User" });
             }
         }
     }

@@ -17,17 +17,18 @@ namespace DoAn
             url: "dang-nhap-he-thong",
             defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
             namespaces: new string[] { "DoAn.Web.Controllers" } // như này mơi đúng
-           );
+            );
+
             routes.MapRoute(
              name: "Giam Sat He Thong",
              url: "quan-ly-giam-sat",
              defaults: new { controller = "GiamSat", action = "Index", id = UrlParameter.Optional },
              namespaces: new string[] { "DoAn.Web.Controllers " });
+
             routes.MapRoute( // cai default lúc nào cũng phải để cuôi cùng và k đc đổi. e đooir đi sao n chạy được. đã dèault còn đỏio gì
                name: "Default",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-           ); 
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }); 
         }
     }
 }

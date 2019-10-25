@@ -1,11 +1,11 @@
 ﻿using DoAn.Service;
-using System.Web.Mvc;
+using System.Web.Http;
 using Web.Infrastructure.Core;
 
 namespace Web.Api
 {
-    [RoutePrefix("api/home")]
     [Authorize]
+    [RoutePrefix("api/home")]
     public class HomeController : ApiControllerBase
     {
         private IExceptionLogService _errorService;
@@ -14,9 +14,9 @@ namespace Web.Api
         {
             this._errorService = errorService;
         }
-
-        [HttpGet]
+        
         [Route("TestMethod")]
+        [HttpGet]
         public string TestMethod()
         {
             return "Hello, Sanslab Member. ";

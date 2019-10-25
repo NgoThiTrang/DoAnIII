@@ -10,7 +10,7 @@ namespace DoAn.Service
     {
         IEnumerable<DataPackage> GetAll();
 
-        IEnumerable<DataPackage> GetTop1000(int DeviceId);
+        IEnumerable<object> GetTop(int deviceId, int count, string paras);
 
         IEnumerable<Data.Model.Param> ReportDataPackage(int deviceId, DateTime date, int paramId);
 
@@ -36,7 +36,7 @@ namespace DoAn.Service
 
         public DataPackage GetParamnewest(int deviceId) => _dataPackageRepository.GetParamnewest(deviceId);
 
-        public IEnumerable<DataPackage> GetTop1000(int DeviceId) => _dataPackageRepository.GetTop1000(DeviceId);
+        public IEnumerable<object> GetTop(int deviceId, int count, string paras) => _dataPackageRepository.GetTop(deviceId, count, paras);
 
         public IEnumerable<Data.Model.Param> ReportDataPackage(int deviceId, DateTime date, int paramId) => _dataPackageRepository.ReportDatPackage(deviceId, date, paramId);
     }

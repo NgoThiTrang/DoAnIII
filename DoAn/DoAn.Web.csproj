@@ -6064,7 +6064,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\kendo\2014.1.318\images\kendoui.ttf" />
     <Content Include="Content\kendo\2014.1.318\images\kendoui.woff" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ActivityLogController.cs" />
@@ -6776,7 +6778,6 @@
     <Folder Include="Content\Admin\js\angular\i18n\ngLocale\" />
     <Folder Include="Content\Admin\js\ckfinder\userfiles\" />
     <Folder Include="Content\Admin\js\plugins\checklist-model\test\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DoAn.Common\DoAn.Common.csproj">

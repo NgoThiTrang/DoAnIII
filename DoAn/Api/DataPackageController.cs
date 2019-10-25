@@ -1,4 +1,5 @@
 ﻿using DoAn.Service;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -58,6 +59,34 @@ namespace Web.MobileApi
             {
                 HttpResponseMessage response = null;
                 var model = _dataPackageService.GetParamnewest(deviceId);
+                response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+
+        [Route("getallparambydevice")]
+        [HttpGet]
+        public HttpResponseMessage GetAllParamByDevice(HttpRequestMessage request, int deviceId)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                var model = _dataPackageService.GetByDeviceId(deviceId);
+                response = request.CreateResponse(HttpStatusCode.OK, model);
+                return response;
+            });
+        }
+
+        [Route("gettop")]
+        [HttpGet]
+        public HttpResponseMessage GetParamByDevice(HttpRequestMessage request, int deviceId, int count = 1000, string param = null)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (string.IsNullOrEmpty(param))
+                    param = "*";
+                var model = _dataPackageService.GetTop(deviceId, count, param);
                 response = request.CreateResponse(HttpStatusCode.OK, model);
                 return response;
             });

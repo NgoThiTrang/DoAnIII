@@ -7,3 +7,12 @@ D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\Autofac.dll
 D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\Autofac.pdb
 D:\Documents\document_20191\DoAn\DoAn.Common\bin\Debug\Autofac.xml
 D:\Documents\document_20191\DoAn\DoAn.Common\obj\Debug\DoAn.Common.csproj.CopyComplete
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\bin\Debug\DoAn.Common.dll
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\bin\Debug\DoAn.Common.pdb
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\bin\Debug\Autofac.dll
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\bin\Debug\Autofac.pdb
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\bin\Debug\Autofac.xml
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\obj\Debug\DoAn.Common.csproj.CoreCompileInputs.cache
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\obj\Debug\DoAn.Common.csproj.CopyComplete
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\obj\Debug\DoAn.Common.dll
+F:\Website\BKRESPhuYen\DoAnIII\DoAn.Common\obj\Debug\DoAn.Common.pdb
